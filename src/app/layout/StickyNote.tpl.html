@@ -1,7 +1,6 @@
 ﻿<div class="panel panel-default">
     <div class="panel-heading" ng-style="{backgroundColor: note.color}">
-        <p style="display:inline" contenteditable="true" class="panel-title" 
-            ng-blur="onUpdateData();">{{note.title | elispeText:note.title}}</p>
+        <p style="display:inline" contenteditable="true" class="panel-title" ng-blur="onUpdateData();">{{note.title | elispeText:note.title}}</p>
         <div class="icons-row">
             <span class="colorwheel" ng-click="myColorChanger(note)"></span>
             <span class="add" ng-click="onAdd()"></span>
@@ -14,4 +13,3 @@
         <!--ng-blur="onUpdateData({note:note,event:$event});"-->
     </div>
 </div>
-

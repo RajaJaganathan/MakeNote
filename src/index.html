@@ -1,49 +1,38 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="MakeNoteApp">
+
 <head>
     <!--<link rel="shortcut icon" href="../../assets/ico/favicon.ico">-->
-
     <title>MakeNote Application</title>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
-
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="assets/css/stickynotes.css">
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
     <script type="text/javascript" src="../vendor/angular/angular.js"></script>
     <script type="text/javascript" src="../vendor/angular/angular-route.js"></script>
     <script type="text/javascript" src="../vendor/angular/angular-animate.js"></script>
-
-   <!-- http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview -->
-
+    <!-- http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview -->
     <script type="text/javascript" src="../vendor/jquery/jquery-2.1.0.js"></script>
     <script type="text/javascript" src="../vendor/jquery/jquery-ui.js"></script>
-
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/bootstrap/js/bootbox.min.js"></script>
-
     <script type="text/ng-template" id="note-container">
-            <div class="stickynotes-container">
-                <mn-note ng-repeat="note in notes | filter:searchText " note="note" ng-model="note" on-add="addNote()" 
-                             on-save="saveNote(note)" on-delete="deleteNote(note)" 
-                             on-update-data="onUpdateData(note,$event)" on-color-changer="changeColor(note)" >
-                </mn-note>
-           </div>
+        <div class="stickynotes-container">
+            <mn-note ng-repeat="note in notes | filter:searchText " note="note" ng-model="note" on-add="addNote()" on-save="saveNote(note)" on-delete="deleteNote(note)" on-update-data="onUpdateData(note,$event)" on-color-changer="changeColor(note)">
+            </mn-note>
+        </div>
     </script>
-
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/note/filters.js"></script>
-    <script type="text/javascript" src="app/note/services.js"></script>    
+    <script type="text/javascript" src="app/note/services.js"></script>
     <script type="text/javascript" src="app/note/controllers.js"></script>
     <script type="text/javascript" src="app/note/directives.js"></script>
     <script type="text/javascript" src="common/controllers.js"></script>
 </head>
 
 <body>
-
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -57,31 +46,25 @@
                 <a class="navbar-brand" href="#">MakeNote</a>
                 <ul class="nav navbar-nav" ng-controller="NoteCtrl">
                     <li ng-class="{active:isActive('/')}"><a href="#/">Notes</a></li>
-                    <li ng-class="{active:isActive('/aboutus')}"><a href="#/aboutus">About</a></li>                    
-                    <li ng-class="{active:isActive('/help')}"><a href="#/help">Help</a></li>                    
+                    <li ng-class="{active:isActive('/aboutus')}"><a href="#/aboutus">About</a></li>
+                    <li ng-class="{active:isActive('/help')}"><a href="#/help">Help</a></li>
                 </ul>
             </div>
             <input type="text" class="form-control filter-textinput" ng-model="searchText" />
         </div>
     </div>
-
     <sn-notification></sn-notification>
-
     <!-- Begin page content -->
-
     <div class="container">
         <img src="assets/images/ajax-loader.gif" ng-show="loadingView" class="loading-image" />
-        <div ng-view class="page {{animationClass}}" ></div>
+        <div ng-view class="page {{animationClass}}"></div>
     </div>
-
-
     </div>
-
     <div id="footer">
         <div class="container">
             <p class="text-muted">MakeNote Demo application</p>
         </div>
     </div>
-
 </body>
+
 </html>
