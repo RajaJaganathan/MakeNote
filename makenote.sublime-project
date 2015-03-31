@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"binary_file_patterns":["vendor/"]//ISSUE: It works at user level not project level config
+		}
+	]
+
+}
