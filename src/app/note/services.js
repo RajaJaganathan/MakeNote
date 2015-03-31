@@ -4,7 +4,7 @@
 
     this.getNotes = function () {
         var deferred = $q.defer();
-        $http.get("data/stickynotes.json").success(function (data) {
+        $http.get("assets/data/stickynotes.json").success(function (data) {
             deferred.resolve(data);
         });
 

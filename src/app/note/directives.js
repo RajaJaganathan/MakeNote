@@ -32,7 +32,7 @@
         controller: function ($scope, $filter) {
             
         },
-        templateUrl: "layout/StickyNote.tpl.html",
+        templateUrl: "app/layout/StickyNote.tpl.html",
         link: function (scope, element, attrs, $filter) {
 
             console.log("$filter", $filter);

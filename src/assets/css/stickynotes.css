@@ -97,19 +97,19 @@ code {
         }
 
             .panel-heading .icons-row span.delete {
-                background: url(images/trash.png) no-repeat;
+                background: url(../images/trash.png) no-repeat;
             }
 
             .panel-heading .icons-row span.save {
-                background: url(images/save_icon.png) no-repeat;
+                background: url(../images/save_icon.png) no-repeat;
             }
 
             .panel-heading .icons-row span.add {
-                background: url(images/add_icon.png) no-repeat;
+                background: url(../images/add_icon.png) no-repeat;
             }
 
             .panel-heading .icons-row span.colorwheel {
-                background: url(images/colorwheel.png) no-repeat;
+                background: url(../images/colorwheel.png) no-repeat;
             }
 
 .panel-body {

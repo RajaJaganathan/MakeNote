@@ -6,24 +6,24 @@
     <title>MakeNote Application</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="stickynotes.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/stickynotes.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript" src="../angularlibs/angular.js"></script>
-    <script type="text/javascript" src="../angularlibs/angular-route.js"></script>
-    <script type="text/javascript" src="../angularlibs/angular-animate.js"></script>
+    <script type="text/javascript" src="../vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="../vendor/angular/angular-route.js"></script>
+    <script type="text/javascript" src="../vendor/angular/angular-animate.js"></script>
 
    <!-- http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview -->
 
-    <script src="jquery-2.1.0.js"></script>
-    <script type="text/javascript" src="jquery-ui.js"></script>
+    <script type="text/javascript" src="../vendor/jquery/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="../vendor/jquery/jquery-ui.js"></script>
 
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="bootstrap/js/bootbox.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootbox.min.js"></script>
 
     <script type="text/ng-template" id="note-container">
             <div class="stickynotes-container">
@@ -34,12 +34,12 @@
            </div>
     </script>
 
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="modules/note/filters.js"></script>
-    <script type="text/javascript" src="modules/note/services.js"></script>    
-    <script type="text/javascript" src="modules/note/controllers.js"></script>
-    <script type="text/javascript" src="modules/note/directives.js"></script>
-    <script type="text/javascript" src="modules/common/controllers.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/note/filters.js"></script>
+    <script type="text/javascript" src="app/note/services.js"></script>    
+    <script type="text/javascript" src="app/note/controllers.js"></script>
+    <script type="text/javascript" src="app/note/directives.js"></script>
+    <script type="text/javascript" src="common/controllers.js"></script>
 </head>
 
 <body>
@@ -70,7 +70,7 @@
     <!-- Begin page content -->
 
     <div class="container">
-        <img src="images/ajax-loader.gif" ng-show="loadingView" class="loading-image" />
+        <img src="assets/images/ajax-loader.gif" ng-show="loadingView" class="loading-image" />
         <div ng-view class="page {{animationClass}}" ></div>
     </div>
 
