@@ -39,13 +39,13 @@
             }
         }).
         when('/aboutus', {
-            templateUrl: "layout/aboutus.html",
+            templateUrl: "app/layout/aboutus.html",
             resolve: {
                 app: delayResolver
             }
         }).
         when('/help', {
-            templateUrl: "layout/help.html",
+            templateUrl: "app/layout/help.html",
             resolve: {
                 app: delayResolver
             }
