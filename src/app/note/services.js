@@ -1,4 +1,7 @@
 ﻿(function() {
+
+    "use strict";
+
     angular.module("NoteApp")
         .service("NoteService", function($http, $q) {
             "use strict";

@@ -1,4 +1,7 @@
 ﻿(function() {
+
+    "use strict";
+
     angular.module("NoteApp")
         .directive('mnNotification', function($timeout) {
             return {

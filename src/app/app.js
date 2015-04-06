@@ -1,5 +1,7 @@
 ﻿(function() {
 
+    "use strict";
+
     angular.module("MakeNoteApp", ['ngRoute', 'ngAnimate', 'NoteApp', 'AboutusApp', 'HelpApp']);
 
     /*Initalize all modules with their dependency*/

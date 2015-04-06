@@ -1,5 +1,6 @@
 ﻿(function() {
-
+    "use strict";
+    
     angular.module("NoteApp")
         .controller("NoteCtrl", function($scope, $q, NoteService) {
             "use strict";

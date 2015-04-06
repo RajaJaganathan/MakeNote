@@ -1,4 +1,7 @@
 ﻿(function() {
+
+	"use strict";
+
     angular.module("NoteApp")
         .filter("elispeText", function() {
             return function(input) {
