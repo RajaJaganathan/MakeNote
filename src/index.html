@@ -10,26 +10,12 @@
     <link rel="stylesheet" href="assets/css/stickynotes.css">
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="../vendor/angular/angular.js"></script>
-    <script type="text/javascript" src="../vendor/angular/angular-route.js"></script>
-    <script type="text/javascript" src="../vendor/angular/angular-animate.js"></script>
-    <!-- http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview -->
-    <script type="text/javascript" src="../vendor/jquery/jquery-2.1.0.js"></script>
-    <script type="text/javascript" src="../vendor/jquery/jquery-ui.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootbox.min.js"></script>
     <script type="text/ng-template" id="note-container">
         <div class="stickynotes-container">
             <mn-note ng-repeat="note in notes | filter:searchText " note="note" ng-model="note" on-add="addNote()" on-save="saveNote(note)" on-delete="deleteNote(note)" on-update-data="onUpdateData(note,$event)" on-color-changer="changeColor(note)">
             </mn-note>
         </div>
     </script>
-    <script type="text/javascript" src="app/app.js"></script>
-    <script type="text/javascript" src="app/note/filters.js"></script>
-    <script type="text/javascript" src="app/note/services.js"></script>
-    <script type="text/javascript" src="app/note/controllers.js"></script>
-    <script type="text/javascript" src="app/note/directives.js"></script>
-    <script type="text/javascript" src="common/controllers.js"></script>
 </head>
 
 <body>
@@ -65,6 +51,24 @@
             <p class="text-muted">MakeNote Demo application</p>
         </div>
     </div>
+
+    <!-- vendor js files -->
+    <script type="text/javascript" src="../vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="../vendor/angular/angular-route.js"></script>
+    <script type="text/javascript" src="../vendor/angular/angular-animate.js"></script>
+    <!-- http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview -->
+    <script type="text/javascript" src="../vendor/jquery/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="../vendor/jquery/jquery-ui.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootbox.min.js"></script>
+
+    <!-- app js files -->
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/note/filters.js"></script>
+    <script type="text/javascript" src="app/note/services.js"></script>
+    <script type="text/javascript" src="app/note/controllers.js"></script>
+    <script type="text/javascript" src="app/note/directives.js"></script>
+    <script type="text/javascript" src="common/controllers.js"></script>
 </body>
 
 </html>
