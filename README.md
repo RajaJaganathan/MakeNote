@@ -1,7 +1,7 @@
 MakeNote
 ========
 
- MakeNote application are developed by using AngularJS for learning purpose
+ MakeNote application are developed by using Angular 1.x for learning purpose
 
 
 ![alt tag](https://raw.githubusercontent.com/RajaJaganathan/MakeNote/master/src/assets/images/makenote.png)
