@@ -83,7 +83,7 @@ code {
     margin-top: -20px;
     -webkit-user-select: none;
     -moz-user-select: none;
-    user-select: none;
+    -ms-user-select: none;
     z-index: 100;
 }
 
