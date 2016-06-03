@@ -2,6 +2,7 @@
 <html lang="en" ng-app="MakeNoteApp">
 
 <head>
+    <!--<base href="/">-->
     <!--<link rel="shortcut icon" href="../../assets/ico/favicon.ico">-->
     <title>MakeNote Application</title>
     <!-- Bootstrap core CSS -->
@@ -31,7 +32,7 @@
                 </button>
                 <a class="navbar-brand" href="#">MakeNote</a>
                 <ul class="nav navbar-nav" ng-controller="NoteCtrl">
-                    <li ng-class="{active:isActive('/')}"><a href="#/">Notes</a></li>
+                    <li ng-class="{active:isActive('/')}"><a href="#">Notes</a></li>
                     <li ng-class="{active:isActive('/aboutus')}"><a href="#/aboutus">About</a></li>
                     <li ng-class="{active:isActive('/help')}"><a href="#/help">Help</a></li>
                 </ul>
@@ -70,5 +71,4 @@
     <script type="text/javascript" src="app/note/directives.js"></script>
     <script type="text/javascript" src="common/controllers.js"></script>
 </body>
-
 </html>

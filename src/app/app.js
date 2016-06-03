@@ -1,18 +1,16 @@
-﻿(function() {
+﻿(function () {
 
     "use strict";
 
-    angular.module("MakeNoteApp", ['ngRoute', 'ngAnimate', 'NoteApp', 'AboutusApp', 'HelpApp']);
-
-    /*Initalize all modules with their dependency*/
+    var app = angular.module("MakeNoteApp", ['ngRoute', 'ngAnimate', 'NoteApp', 'AboutusApp', 'HelpApp']);
 
     //angular.module("LoginApp", []);
     angular.module("NoteApp", []);
     angular.module("AboutusApp", []);
     angular.module("HelpApp", []);
 
-    angular.module("MakeNoteApp").run(['$rootScope', function($root) {
-        $root.$on('$routeChangeStart', function(e, curr, prev) {
+    app.run(['$rootScope', function ($root) {
+        $root.$on('$routeChangeStart', function (e, curr, prev) {
             if (curr.$$route && curr.$$route.resolve) {
                 if (curr.$$route.originalPath == "/") {
                     $root.animationClass = "page-home";
@@ -24,44 +22,43 @@
                 $root.loadingView = true;
             }
         });
-        $root.$on('$routeChangeSuccess', function(e, curr, prev) {
+        $root.$on('$routeChangeSuccess', function (e, curr, prev) {
             // Hide loading message
             $root.loadingView = false;
         });
-    }]);
-
-
-    angular.module("MakeNoteApp").config(function($routeProvider) {
+    }]).config(function ($routeProvider, $locationProvider) {
         $routeProvider.
-        when('/', {
-            templateUrl: "note-container",
-            controller: "NoteCtrl",
-            resolve: {
-                app: delayResolver
-            }
-        }).
-        when('/aboutus', {
-            templateUrl: "app/layout/aboutus.html",
-            resolve: {
-                app: delayResolver
-            }
-        }).
-        when('/help', {
-            templateUrl: "app/layout/help.html",
-            resolve: {
-                app: delayResolver
-            }
-        }).otherwise({
-            redirectTo: '/'
-        });
+            when('/', {
+                templateUrl: "note-container",
+                controller: "NoteCtrl",
+                resolve: {
+                    app: delayResolver
+                }
+            }).
+            when('/aboutus', {
+                templateUrl: "app/layout/aboutus.html",
+                resolve: {
+                    app: delayResolver
+                }
+            }).
+            when('/help', {
+                templateUrl: "app/layout/help.html",
+                resolve: {
+                    app: delayResolver
+                }
+            }).otherwise({
+                redirectTo: '/'
+            });
+
+        // $locationProvider.html5Mode(true);
     });
 
 
     function delayResolver($q, $timeout) {
         var defer = $q.defer();
-        $timeout(function() {
+        $timeout(function () {
             defer.resolve();
-        }, 1000);
+        }, 0);
         return defer.promise;
     }
 

@@ -1,50 +1,38 @@
 [
     {
-        "title": "Lorem ipsum",
-        "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "title": "Personal Things",
+        "content": "Complete purchase website in Godaddy\nComplete purchase website in Godaddy",
         "category": "",
-		"color":"#d3fdb5"
+        "color": "#d3fdb5"
     },
-	{
-        "title": "Lorem ipsum",
+    {
+        "title": "Today Todo",
         "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
         "category": "",
-		"color":"#8fe5fe"
+        "color": "#8fe5fe"
     },
-	{
-        "title": "Lorem ipsum",
+    {
+        "title": "Purchase",
         "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
         "category": "",
-		"color":"#ffffcc"
+        "color": "#ffffcc"
     },
-	{
-        "title": "Lorem ipsum",
+    {
+        "title": "Grocery",
         "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
         "category": "",
-		"color":"#ff6df1"
+        "color": "#ff6df1"
     },
-	{
-        "title": "Lorem ipsum",
+    {
+        "title": "Finance",
         "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
         "category": "",
-		"color":"#d3fdb5"
+        "color": "#d3fdb5"
     },
-	{
-        "title": "Lorem ipsum",
+    {
+        "title": "Offical",
         "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
         "category": "",
-		"color":"#8fe5fe"
-    },
-	{
-        "title": "Lorem ipsum",
-        "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-        "category": "",
-		"color":"#c38af3"
-    },
-	{
-        "title": "Lorem ipsum",
-        "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-        "category": "",
-		"color":"#d3fdb5"
+        "color": "#8fe5fe"
     }
 ]

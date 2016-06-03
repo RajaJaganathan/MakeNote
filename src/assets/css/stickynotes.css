@@ -1,9 +1,10 @@
 ﻿/* Sticky footer styles
 -------------------------------------------------- */
+
 html {
     position: relative;
     min-height: 100%;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 }
 
 #footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
@@ -23,6 +24,8 @@ body {
 
 /* Custom page CSS
 -------------------------------------------------- */
+
+
 /* Not required for template or sticky footer method. */
 
 body > .container {
@@ -47,7 +50,6 @@ code {
     font-size: 1.5em;
 }
 
-
 .form-container {
     height: 100px;
 }
@@ -63,54 +65,53 @@ code {
     max-height: 170px;
     height: 170px;
     position: relative;
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     background-color: #ffffcc;
 }
-
 
 .panel-heading {
     position: relative;
     height: 40px;
 }
 
-    .panel-heading .icons-row {
-        position: absolute;
-        right: 0px;
-        top:25px;
-        width: 100px;
-        height: 40px;
-        margin-top: -20px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-        z-index:100;
-    }
+.panel-heading .icons-row {
+    position: absolute;
+    right: 0px;
+    top: 25px;
+    width: 100px;
+    height: 40px;
+    margin-top: -20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    z-index: 100;
+}
 
-        .panel-heading .icons-row span {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 2px;
-        }
+.panel-heading .icons-row span {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+}
 
-            .panel-heading .icons-row span.delete {
-                background: url(../images/trash.png) no-repeat;
-            }
+.panel-heading .icons-row span.delete {
+    background: url(../images/trash.png) no-repeat;
+}
 
-            .panel-heading .icons-row span.save {
-                background: url(../images/save_icon.png) no-repeat;
-            }
+.panel-heading .icons-row span.save {
+    background: url(../images/save_icon.png) no-repeat;
+}
 
-            .panel-heading .icons-row span.add {
-                background: url(../images/add_icon.png) no-repeat;
-            }
+.panel-heading .icons-row span.add {
+    background: url(../images/add_icon.png) no-repeat;
+}
 
-            .panel-heading .icons-row span.colorwheel {
-                background: url(../images/colorwheel.png) no-repeat;
-            }
+.panel-heading .icons-row span.colorwheel {
+    background: url(../images/colorwheel.png) no-repeat;
+}
 
 .panel-body {
     position: absolute;
@@ -124,17 +125,17 @@ code {
     padding: 5px;
 }
 
-    .panel-body p {
-        padding-left: 30px;
-        outline: 0;
-    }
+.panel-body p {
+    padding: 5px;
+    outline: 0;
+}
 
 .panel-heading p {
     outline: 0;
-    width:120px;  
-    max-height:30px;
-    display:inline; /*make single line*/
-    overflow:hidden;  
+    max-height: 30px;
+    display: inline;
+    /*make single line*/
+    overflow: hidden;
 }
 
 .panel-title {
@@ -163,7 +164,6 @@ code {
     margin-top: 50px;
 }
 
-
 .loading-image {
     position: absolute;
     top: 50%;
@@ -174,6 +174,7 @@ code {
     margin-left: -50%;
 }
 
+
 /*Animation */
 
 .page {
@@ -182,255 +183,10 @@ code {
     min-width: 960px;
 }
 
-
-    .page.ng-leave {
-        z-index: 9999;
-    }
-
-    .page.ng-enter {
-        z-index: 8888;
-    }
-
-
-
-/* page specific animations ------------------------ */
-
-/* home -------------------------- */
-.page-home.ng-leave {
-    -webkit-transform-origin: 0% 0%;
-    -webkit-animation: rotateFall 1s both ease-in;
-    -moz-transform-origin: 0% 0%;
-    -moz-animation: rotateFall 1s both ease-in;
-    transform-origin: 0% 0%;
-    animation: rotateFall 1s both ease-in;
+.page.ng-leave {
+    z-index: 9999;
 }
 
-.page-home.ng-enter {
-    -webkit-animation: scaleUp 0.5s both ease-in;
-    -moz-animation: scaleUp 0.5s both ease-in;
-    animation: scaleUp 0.5s both ease-in;
-}
-
-/* about ------------------------ */
-.page-about.ng-leave {
-    -webkit-animation: slideOutLeft 0.5s both ease-in;
-    -moz-animation: slideOutLeft 0.5s both ease-in;
-    animation: slideOutLeft 0.5s both ease-in;
-}
-
-.page-about.ng-enter {
-    -webkit-animation: slideInRight 0.5s both ease-in;
-    -moz-animation: slideInRight 0.5s both ease-in;
-    animation: slideInRight 0.5s both ease-in;
-}
-
-/* contact ---------------------- */
-.page-contact.ng-leave {
-    -webkit-transform-origin: 50% 50%;
-    -webkit-animation: rotateOutNewspaper .5s both ease-in;
-    -moz-transform-origin: 50% 50%;
-    -moz-animation: rotateOutNewspaper .5s both ease-in;
-    transform-origin: 50% 50%;
-    animation: rotateOutNewspaper .5s both ease-in;
-}
-
-.page-contact.ng-enter {
-    -webkit-animation: slideInUp 0.5s both ease-in;
-    -moz-animation: slideInUp 0.5s both ease-in;
-    animation: slideInUp 0.5s both ease-in;
-}
-
-/* rotate and fall */
-@-webkit-keyframes rotateFall {
-    0% {
-        -webkit-transform: rotateZ(0deg);
-    }
-
-    20% {
-        -webkit-transform: rotateZ(10deg);
-        -webkit-animation-timing-function: ease-out;
-    }
-
-    40% {
-        -webkit-transform: rotateZ(17deg);
-    }
-
-    60% {
-        -webkit-transform: rotateZ(16deg);
-    }
-
-    100% {
-        -webkit-transform: translateY(100%) rotateZ(17deg);
-    }
-}
-
-@-moz-keyframes rotateFall {
-    0% {
-        -moz-transform: rotateZ(0deg);
-    }
-
-    20% {
-        -moz-transform: rotateZ(10deg);
-        -moz-animation-timing-function: ease-out;
-    }
-
-    40% {
-        -moz-transform: rotateZ(17deg);
-    }
-
-    60% {
-        -moz-transform: rotateZ(16deg);
-    }
-
-    100% {
-        -moz-transform: translateY(100%) rotateZ(17deg);
-    }
-}
-
-@keyframes rotateFall {
-    0% {
-        transform: rotateZ(0deg);
-    }
-
-    20% {
-        transform: rotateZ(10deg);
-        animation-timing-function: ease-out;
-    }
-
-    40% {
-        transform: rotateZ(17deg);
-    }
-
-    60% {
-        transform: rotateZ(16deg);
-    }
-
-    100% {
-        transform: translateY(100%) rotateZ(17deg);
-    }
-}
-
-/* scale up */
-@keyframes scaleUp {
-    from {
-        opacity: 0.3;
-        -webkit-transform: scale(0.8);
-    }
-}
-
-@-moz-keyframes scaleUp {
-    from {
-        opacity: 0.3;
-        -moz-transform: scale(0.8);
-    }
-}
-
-@-webkit-keyframes scaleUp {
-    from {
-        opacity: 0.3;
-        -webkit-transform: scale(0.8);
-    }
-}
-
-/* slide in from the right */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@-moz-keyframes slideInRight {
-    from {
-        -moz-transform: translateX(100%);
-    }
-
-    to {
-        -moz-transform: translateX(0);
-    }
-}
-
-@-webkit-keyframes slideInRight {
-    from {
-        -webkit-transform: translateX(100%);
-    }
-
-    to {
-        -webkit-transform: translateX(0);
-    }
-}
-
-/* slide in from the bottom */
-@keyframes slideInUp {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
-
-@-moz-keyframes slideInUp {
-    from {
-        -moz-transform: translateY(100%);
-    }
-
-    to {
-        -moz-transform: translateY(0);
-    }
-}
-
-@-webkit-keyframes slideInUp {
-    from {
-        -webkit-transform: translateY(100%);
-    }
-
-    to {
-        -webkit-transform: translateY(0);
-    }
-}
-
-/* slide in from the bottom */
-@keyframes slideOutLeft {
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@-moz-keyframes slideOutLeft {
-    to {
-        -moz-transform: translateX(-100%);
-    }
-}
-
-@-webkit-keyframes slideOutLeft {
-    to {
-        -webkit-transform: translateX(-100%);
-    }
-}
-
-/* rotate out newspaper */
-@-webkit-keyframes rotateOutNewspaper {
-    to {
-        -webkit-transform: translateZ(-3000px) rotateZ(360deg);
-        opacity: 0;
-    }
-}
-
-@-moz-keyframes rotateOutNewspaper {
-    to {
-        -moz-transform: translateZ(-3000px) rotateZ(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes rotateOutNewspaper {
-    to {
-        transform: translateZ(-3000px) rotateZ(360deg);
-        opacity: 0;
-    }
+.page.ng-enter {
+    z-index: 8888;
 }
