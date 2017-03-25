@@ -2,14 +2,13 @@
     <div class="panel-heading" ng-style="{backgroundColor: note.color}">
         <p style="display:inline" contenteditable="true" class="panel-title" ng-blur="onUpdateData();">{{note.title | elispeText:note.title}}</p>
         <div class="icons-row">
-            <span class="colorwheel" ng-click="myColorChanger(note)"></span>
-            <span class="add" ng-click="onAdd()"></span>
-            <span class="save" ng-click="onSave()"></span>
-            <span class="delete" ng-click="onDelete()"></span>
+            <span class="glyphicon glyphicon-text-color" ng-click="myColorChanger(note)"></span>
+            <span class="glyphicon glyphicon-plus" ng-click="onAdd()"></span>
+            <span class="glyphicon glyphicon-floppy-saved" ng-click="onSave()"></span>
+            <span class="glyphicon glyphicon-remove" ng-click="onDelete()"></span>
         </div>
     </div>
     <div class="panel-body" ng-style="{backgroundColor: note.color}">
         <p class="text-container" contenteditable="true" ng-blur="onUpdateData();">{{note.content}}</p>
-        <!--ng-blur="onUpdateData({note:note,event:$event});"-->       
     </div>
 </div>

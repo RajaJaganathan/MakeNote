@@ -1,4 +1,6 @@
-﻿function mnContenteditable() {
+﻿mnContenteditable.$inject = [];
+
+function mnContenteditable() {
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, ngModelCtrl) {
@@ -31,16 +33,14 @@ function mnNote($filter) {
             onUpdateData: "&",
             onColorChanger: "&",
         },
-        templateUrl: "app/layout/stickynote.html",
+        templateUrl: "app/note/note.html",
         link: function(scope, element, attrs) {
 
             scope.onUpdateData = function() {
                 // note.content = angular.element(event.target).html();
                 scope.note.title = element.children().eq(0).find("p").html();
                 scope.note.content = element.children().eq(1).find("p").html();
-
-                scope.note.title = $filter("elispeText")(scope.note.title);
-                console.log("onUpdateData HTML", scope.note);
+                scope.note.title = $filter('elispeText')(scope.note.title);
             }
 
             scope.myColorChanger = function(note) {
