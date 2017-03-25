@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanwWebpackPlugin = require('clean-webpack-plugin');
 const BabiliPlugin = require("babili-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: {
@@ -28,7 +29,15 @@ const config = {
             },
             include: [
                 path.resolve(__dirname, "src")
-            ],
+            ]
+        }, {
+            test: /\.css$/,
+            loader: ['style-loader', 'css-loader'],
+        }, {
+            test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+            use: [{
+                loader: "file-loader"
+            }]
         }]
     },
     plugins: [
@@ -46,13 +55,21 @@ const config = {
             context: 'src/mock-data',
             from: '**/*',
             to: 'mock-data'
-        }, ])
+        }, {
+            context: 'src/images',
+            from: '**/*',
+            to: 'images'
+        }, {
+            context: 'src/styles',
+            from: '**/*',
+            to: 'styles'
+        }])
     ],
-    devServer: {
-        contentBase: path.join(__dirname, "build"),
-        compress: true,
-        port: 9000       
-    }
+    // devServer: {
+    //     contentBase: path.join(__dirname, "build"),
+    //     compress: true,
+    //     port: 9000       
+    // }
 };
 
 module.exports = config;
