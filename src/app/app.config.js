@@ -1,4 +1,6 @@
-﻿export default function($routeProvider, $locationProvider) {
+﻿appConfig.$inject = ['$routeProvider', '$locationProvider'];
+
+function appConfig($routeProvider, $locationProvider) {
     $routeProvider.
     when('/', {
         templateUrl: 'note-container',
@@ -21,13 +23,19 @@
     }).otherwise({
         redirectTo: '/'
     });
-    // $locationProvider.html5Mode(true);
+   // $locationProvider.html5Mode(true);
 }
+
+delayResolver.$inject = ['$q', '$timeout'];
 
 function delayResolver($q, $timeout) {
     var defer = $q.defer();
     $timeout(function() {
         defer.resolve();
-    }, 0);
+    }, 300);
     return defer.promise;
 }
+
+export {
+    appConfig
+};

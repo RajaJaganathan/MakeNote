@@ -1,10 +1,9 @@
-const angular = require('angular');
-
 import {NoteCtrl , NavigationCtrl} from './controllers';
 import {NoteService} from './services';
 import {mnContenteditable, mnNote} from './directives';
 
-const app = angular.module('NoteApp', []);
+
+var app = angular.module('NoteApp', []);
 
 app.controller('NoteCtrl', NoteCtrl);
 app.controller('NavigationCtrl', NavigationCtrl);

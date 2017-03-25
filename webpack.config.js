@@ -9,42 +9,62 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: {
-        app: './src/app/app.js',
-        vendor: './src/vendor.js'
+        vendor: './src/vendor.js',
+        app: './src/app/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].bundle.js'
+        filename: '[name].js'
     },
     watch: true,
     devtool: "source-map",
     module: {
         rules: [{
-            test: /\.(js)$/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
-                }
+                test: /\.(js)$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                },
+                include: [
+                    path.resolve(__dirname, "src")
+                ]
+            }, {
+                test: /\.css$/,
+                loader: ['style-loader', 'css-loader'],
+            }, {
+                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+                use: [{
+                    loader: "file-loader"
+                }]
             },
-            include: [
-                path.resolve(__dirname, "src")
-            ]
-        }, {
-            test: /\.css$/,
-            loader: ['style-loader', 'css-loader'],
-        }, {
-            test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-            use: [{
-                loader: "file-loader"
-            }]
-        }]
+            {
+                test: /\.(jpg|jpeg|gif|png)$/,
+                use: [{
+                    loader: "url-loader"
+                }]
+            }
+        ]
     },
     plugins: [
         new CleanwWebpackPlugin(['build']),
         // new webpack.optimize.UglifyJsPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            chunksSortMode: function(a, b) {
+                if (a.names[0] > b.names[0]) {
+                    return -1;
+                }
+                if (a.names[0] < b.names[0]) {
+                    return 1;
+                }
+                return 0;
+            }
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['vendor'],
+            Infinity
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -52,6 +72,10 @@ const config = {
             'window.jQuery': 'jquery'
         }),
         new CopyWebpackPlugin([{
+            context: 'src',
+            from: 'src/app/**/*.html',
+            to: 'build/'
+        }, {
             context: 'src/mock-data',
             from: '**/*',
             to: 'mock-data'
@@ -65,11 +89,11 @@ const config = {
             to: 'styles'
         }])
     ],
-    // devServer: {
-    //     contentBase: path.join(__dirname, "build"),
-    //     compress: true,
-    //     port: 9000       
-    // }
+    devServer: {
+        contentBase: path.join(__dirname, "build"),
+        compress: true,
+        port: 9000
+    }
 };
 
 module.exports = config;
