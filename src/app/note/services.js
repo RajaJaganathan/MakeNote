@@ -1,19 +1,9 @@
-﻿(function() {
+﻿NoteService.$inject = ['$http'];
 
-    "use strict";
-
-    angular.module("NoteApp")
-        .service("NoteService", function($http, $q) {
-            "use strict";
-
-            this.getNotes = function() {
-                var deferred = $q.defer();
-                $http.get("assets/data/stickynotes.json").success(function(data) {
-                    deferred.resolve(data);
-                });
-
-                return deferred.promise;
-            }
+export function NoteService($http) {
+    this.getNotes = function() {
+        $http.get("mock-data/stickynotes.json").then(function(res) {
+            return res.data;
         });
-
-})();
+    }
+}

@@ -1,64 +1,29 @@
-﻿(function () {
+﻿'use strict';
 
-    "use strict";
+import {ngRoute} from 'angular-route';
+import {ngAnimate} from 'angular-animate';
+// import {NoteApp} from 'NoteApp';
+// import {AboutusApp} from 'AboutusApp';
+// import {HelpApp} from 'HelpApp';
 
-    var app = angular.module("MakeNoteApp", ['ngRoute', 'ngAnimate', 'NoteApp', 'AboutusApp', 'HelpApp']);
+import {NoteCtrl , NavigationCtrl} from './note/controllers';
+import {NoteService} from './note/services';
+import {appRun} from './app.run';
+import {appConfig} from './app.config';
 
-    //angular.module("LoginApp", []);
-    angular.module("NoteApp", []);
-    angular.module("AboutusApp", []);
-    angular.module("HelpApp", []);
+console.log(NoteCtrl);
+console.log(NavigationCtrl);
 
-    app.run(['$rootScope', function ($root) {
-        $root.$on('$routeChangeStart', function (e, curr, prev) {
-            if (curr.$$route && curr.$$route.resolve) {
-                if (curr.$$route.originalPath == "/") {
-                    $root.animationClass = "page-home";
-                } else if (curr.$$route.originalPath == "/aboutus") {
-                    $root.animationClass = "page-about";
-                } else if (curr.$$route.originalPath == "/help") {
-                    $root.animationClass = "page-contact";
-                }
-                $root.loadingView = true;
-            }
-        });
-        $root.$on('$routeChangeSuccess', function (e, curr, prev) {
-            // Hide loading message
-            $root.loadingView = false;
-        });
-    }]).config(function ($routeProvider, $locationProvider) {
-        $routeProvider.
-            when('/', {
-                templateUrl: "note-container",
-                controller: "NoteCtrl",
-                resolve: {
-                    app: delayResolver
-                }
-            }).
-            when('/aboutus', {
-                templateUrl: "app/layout/aboutus.html",
-                resolve: {
-                    app: delayResolver
-                }
-            }).
-            when('/help', {
-                templateUrl: "app/layout/help.html",
-                resolve: {
-                    app: delayResolver
-                }
-            }).otherwise({
-                redirectTo: '/'
-            });
-        // $locationProvider.html5Mode(true);
-    });
+const app = angular.module('MakeNoteApp', ['ngRoute', 'ngAnimate' /*, 'NoteApp', 'AboutusApp', 'HelpApp'*/]); 
 
+app.controller('NoteCtrl', NoteCtrl);
+// app.controller('NavigationCtrl', NavigationCtrl);
+app.service('NoteService', NoteService);
 
-    function delayResolver($q, $timeout) {
-        var defer = $q.defer();
-        $timeout(function () {
-            defer.resolve();
-        }, 0);
-        return defer.promise;
-    }
+// app.run(appRun);
+// app.config(appConfig);
 
-})();
+angular.module('NoteApp', []);
+angular.module('AboutusApp', []);
+angular.module('HelpApp', []);
+
