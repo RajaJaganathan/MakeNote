@@ -23,7 +23,8 @@ function appConfig($routeProvider, $locationProvider) {
     }).otherwise({
         redirectTo: '/'
     });
-   // $locationProvider.html5Mode(true);
+
+//    $locationProvider.html5Mode(true);
 }
 
 delayResolver.$inject = ['$q', '$timeout'];
@@ -32,7 +33,7 @@ function delayResolver($q, $timeout) {
     var defer = $q.defer();
     $timeout(function() {
         defer.resolve();
-    }, 300);
+    }, 0);
     return defer.promise;
 }
 

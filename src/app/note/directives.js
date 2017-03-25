@@ -17,7 +17,9 @@
     }
 }
 
-function mnNote() {
+mnNote.$inject = ['$filter'];
+
+function mnNote($filter) {
     return {
         restrict: "EA",
         replace: true,
@@ -29,10 +31,8 @@ function mnNote() {
             onUpdateData: "&",
             onColorChanger: "&",
         },
-        templateUrl: "app/layout/StickyNote.tpl.html",
-        link: function(scope, element, attrs, $filter) {
-
-            console.log("$filter", $filter);
+        templateUrl: "app/layout/stickynote.html",
+        link: function(scope, element, attrs) {
 
             scope.onUpdateData = function() {
                 // note.content = angular.element(event.target).html();

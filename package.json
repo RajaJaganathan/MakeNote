@@ -39,6 +39,7 @@
     "angular": "^1.6.3",
     "angular-animate": "^1.6.3",
     "angular-route": "^1.6.3",
+    "bootbox": "^4.4.0",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1"
   }

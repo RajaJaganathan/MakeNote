@@ -1,4 +1,6 @@
-﻿NoteCtrl.$inject = ['$scope', '$q', 'NoteService'];
+﻿import bootbox from 'bootbox';
+
+NoteCtrl.$inject = ['$scope', '$q', 'NoteService'];
 
 function NoteCtrl($scope, $q, NoteService) {
     "use strict";
