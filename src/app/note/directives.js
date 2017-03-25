@@ -29,9 +29,6 @@ function mnNote() {
             onUpdateData: "&",
             onColorChanger: "&",
         },
-        controller: function($scope, $filter) {
-
-        },
         templateUrl: "app/layout/StickyNote.tpl.html",
         link: function(scope, element, attrs, $filter) {
 

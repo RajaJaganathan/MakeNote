@@ -1,5 +1,5 @@
-﻿// import styles1 from 'bootstrap/dist/css/bootstrap.min.css';
-// import styles2 from '../styles/stickynotes.css';
+﻿import styles1 from 'bootstrap/dist/css/bootstrap.min.css';
+import styles2 from '../styles/stickynotes.css';
 
 import angular from 'angular';
 import ngRoute from 'angular-route';

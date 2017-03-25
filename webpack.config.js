@@ -72,9 +72,9 @@ const config = {
             'window.jQuery': 'jquery'
         }),
         new CopyWebpackPlugin([{
-            context: 'src',
-            from: 'src/app/**/*.html',
-            to: 'build/'
+            context: 'src/app',
+            from: '**/*.html',
+            to: 'app/'
         }, {
             context: 'src/mock-data',
             from: '**/*',
