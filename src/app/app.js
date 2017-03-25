@@ -7,8 +7,8 @@ import ngAnimate from 'angular-route';
 
 import sharedApp from './shared/shared.module';
 import {NoteApp} from './note';
-import {AboutusApp} from './aboutus';
-import {HelpApp} from './help';
+import AboutusApp from './aboutus';
+import HelpApp from './help';
 
 import {appRun} from './app.run';
 import {appConfig} from './app.config';

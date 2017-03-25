@@ -10,13 +10,13 @@ function appConfig($routeProvider, $locationProvider) {
         }
     }).
     when('/aboutus', {
-        templateUrl: 'app/layout/aboutus.html',
+        templateUrl: 'app/aboutus/aboutus.html',
         resolve: {
             app: delayResolver
         }
     }).
     when('/help', {
-        templateUrl: 'app/layout/help.html',
+        templateUrl: 'app/help/help.html',
         resolve: {
             app: delayResolver
         }

@@ -1,3 +1,1 @@
-const app = angular.module('AboutusApp', []);
-
-export {app as AboutusApp};
+export default angular.module('AboutusApp', []);
