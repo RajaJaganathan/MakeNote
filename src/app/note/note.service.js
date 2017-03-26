@@ -1,8 +1,11 @@
-﻿NoteService.$inject = ['$http'];
+﻿export default class NoteService {
+    constructor($http) {
+        'ngInject';
+        this.$http = $http;
+    }
 
-export function NoteService($http) {
-    this.getNotes = function() {
-        return $http.get("mock-data/stickynotes.json").then(function(res) {
+    getNotes() {
+        return this.$http.get('mock-data/stickynotes.json').then(function(res) {
             return res.data;
         });
     }

@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanwWebpackPlugin = require('clean-webpack-plugin');
 const BabiliPlugin = require("babili-webpack-plugin");
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -22,6 +23,11 @@ const config = {
         rules: [{
                 test: /\.(js)$/,
                 use: {
+                    loader: 'ng-annotate-loader',
+                }
+            }, {
+                test: /\.(js)$/,
+                use: {
                     loader: 'babel-loader',
                     options: {
                         presets: ['env']
@@ -33,18 +39,19 @@ const config = {
             }, {
                 test: /\.css$/,
                 loader: ['style-loader', 'css-loader'],
-            }, {
-                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-                use: [{
-                    loader: "file-loader"
-                }]
             },
             {
                 test: /\.(jpg|jpeg|gif|png)$/,
                 use: [{
                     loader: "url-loader"
                 }]
-            }
+            },
+            {
+                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+                use: [{
+                    loader: "file-loader"
+                }]
+            },
         ]
     },
     plugins: [

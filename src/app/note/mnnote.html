@@ -1,0 +1,14 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading" ng-style="{backgroundColor: $ctrl.note.color}">
+        <p style="display:inline" contenteditable="true" class="panel-title" ng-blur="$ctrl.onUpdateData();">{{$ctrl.note.title | elispeText:$ctrl.note.title}}</p>
+        <div class="icons-row">
+            <span class="glyphicon glyphicon-text-color" ng-click="$ctrl.myColorChanger($ctrl.note)"></span>
+            <span class="glyphicon glyphicon-plus" ng-click="$ctrl.onAdd()"></span>
+            <span class="glyphicon glyphicon-floppy-saved" ng-click="$ctrl.onSave()"></span>
+            <span class="glyphicon glyphicon-remove" ng-click="$ctrl.onDelete()"></span>
+        </div>
+    </div>
+    <div class="panel-body" ng-style="{backgroundColor: $ctrl.note.color}">
+        <p class="text-container" contenteditable="true" ng-blur="$ctrl.onUpdateData();">{{$ctrl.note.content}}</p>
+    </div>
+</div>

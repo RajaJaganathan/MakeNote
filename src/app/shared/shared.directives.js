@@ -1,9 +1,8 @@
-﻿mnNotification.$inject = ['$timeout'];
-
-function mnNotification($timeout) {
+﻿export function mnNotification($timeout) {
+    'ngInject';
     return {
         restrict: 'EA',
-        template: '<div class="alert alert-success">Notification</div>',
+        template: `<div class="alert alert-success">Notification</div>`,
         link: function(scope, element, attrs) {
             $timeout(function() {
                 element.empty();
@@ -11,8 +10,4 @@ function mnNotification($timeout) {
             }, 5000);
         }
     }
-}
-
-export {
-    mnNotification
 }

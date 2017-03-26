@@ -1,18 +1,14 @@
-import {NoteCtrl , NavigationCtrl} from './note.controllers';
-import {NoteService} from './note.service';
-import {mnContenteditable, mnNote} from './note.directives';
-import elispeText from './note.filters';
+import NavigationCtrl from './navigation.controllers';
+import NoteService from './note.service';
+import {mnContenteditable} from './contenteditable.directives';
+import {mnNote} from './mnnote.component';
+import {elispeText} from './note.filters';
+import NoteComponent from './note.component';
 
-
-var app = angular.module('NoteApp', []);
-
-app.controller('NoteCtrl', NoteCtrl);
-app.controller('NavigationCtrl', NavigationCtrl);
-
-app.directive('mnContenteditable', mnContenteditable);
-app.directive('mnNote', mnNote);
-
-app.service('noteService', NoteService);
-app.filter('elispeText', elispeText);
-
-export {app as NoteApp};
+export default angular.module('NoteApp', [])
+  .controller('NavigationCtrl', NavigationCtrl)
+  .directive('mnContenteditable', mnContenteditable)
+  .component('mnNote', mnNote)
+  .component('noteComponent', NoteComponent)  
+  .service('noteService', NoteService)
+  .filter('elispeText', elispeText);

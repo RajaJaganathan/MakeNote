@@ -1,10 +1,10 @@
-﻿appConfig.$inject = ['$routeProvider', '$locationProvider'];
+﻿import NoteApp from './note';
 
 function appConfig($routeProvider, $locationProvider) {
+    'ngInject';
     $routeProvider.
     when('/', {
-        templateUrl: 'note-container',
-        controller: 'NoteCtrl',
+        template: '<note-component></note-component>',
         resolve: {
             app: delayResolver
         }
@@ -24,12 +24,11 @@ function appConfig($routeProvider, $locationProvider) {
         redirectTo: '/'
     });
 
-//    $locationProvider.html5Mode(true);
+    //    $locationProvider.html5Mode(true);
 }
 
-delayResolver.$inject = ['$q', '$timeout'];
-
 function delayResolver($q, $timeout) {
+    'ngInject';
     var defer = $q.defer();
     $timeout(function() {
         defer.resolve();
@@ -37,6 +36,4 @@ function delayResolver($q, $timeout) {
     return defer.promise;
 }
 
-export {
-    appConfig
-};
+export default appConfig;

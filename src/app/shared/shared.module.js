@@ -1,5 +1,5 @@
 import {mnNotification} from './shared.directives';
 
 export default angular
-  .module('shared.module', [])
+  .module('SharedApp', [])
   .directive('mnNotification', mnNotification);
