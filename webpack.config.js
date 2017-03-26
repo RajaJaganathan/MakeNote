@@ -38,7 +38,10 @@ const config = {
                 include: BUILD_PATH.SRC_PATH
             }, {
                 test: /\.css$/,
-                loader: ['style-loader', 'css-loader'],
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                })
             },
             {
                 test: /\.(jpg|jpeg|gif|png)$/,
@@ -46,13 +49,14 @@ const config = {
             },
             {
                 test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-                loader: "file-loader"
+                loader: 'file-loader'
             }
         ]
     },
     plugins: [
         new CleanwWebpackPlugin(['build']),
         // new webpack.optimize.UglifyJsPlugin(),
+        new ExtractTextPlugin("styles/style.css"),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             chunksSortMode: function(a, b) {
@@ -86,10 +90,6 @@ const config = {
             context: 'src/images',
             from: '**/*',
             to: 'images'
-        }, {
-            context: 'src/styles',
-            from: '**/*',
-            to: 'styles'
         }])
     ],
     devServer: {

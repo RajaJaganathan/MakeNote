@@ -1,10 +1,6 @@
 ﻿import styles1 from 'bootstrap/dist/css/bootstrap.min.css';
 import styles2 from '../styles/stickynotes.css';
 
-import 'angular';
-import 'angular-route';
-import 'angular-animate';
-
 import SharedApp from './shared/shared.module';
 import NavbarApp from './layout';
 
