@@ -8,14 +8,15 @@ const BabiliPlugin = require("babili-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const BUILD_PATH = {
-    SRC_PATH: [path.resolve(__dirname, 'src')]
+const buildPath = {
+    SRC: path.resolve(__dirname, 'src'),
+    BUILD: path.resolve(__dirname, 'build')
 }
 
 const config = {
     entry: {
-        vendor: './src/vendor.js',
-        app: './src/app/app.js'
+        'scripts/vendor': './src/vendor.js',
+        'scripts/app': './src/app/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -35,7 +36,7 @@ const config = {
                         presets: ['env']
                     }
                 },
-                include: BUILD_PATH.SRC_PATH
+                include:[buildPath.SRC]
             }, {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -49,7 +50,7 @@ const config = {
             },
             {
                 test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-                loader: 'file-loader'
+                loader: 'url-loader'
             }
         ]
     },
@@ -70,7 +71,7 @@ const config = {
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor'],
+            name: ['scripts/vendor'],
             Infinity
         }),
         new webpack.ProvidePlugin({
@@ -79,18 +80,19 @@ const config = {
             'window.jQuery': 'jquery'
         }),
         new CopyWebpackPlugin([{
-            context: 'src/app',
-            from: '**/*.html',
-            to: 'app/'
-        }, {
-            context: 'src/mock-data',
-            from: '**/*',
-            to: 'mock-data'
-        }, {
-            context: 'src/images',
-            from: '**/*',
-            to: 'images'
-        }])
+                context: 'src/app',
+                from: '**/*.html',
+                to: 'app/'
+            }, {
+                context: 'src/mock-data',
+                from: '**/*',
+                to: 'mock-data'
+            }, {
+                context: 'src/assets',
+                from: '**/*',
+                to: 'assets'
+            }
+        ])
     ],
     devServer: {
         contentBase: path.join(__dirname, "build"),
