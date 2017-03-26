@@ -7,11 +7,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">MakeNote</a>
+        <a class="navbar-brand" href="#/">MakeNote</a>
         <ul class="nav navbar-nav">
-          <li ng-class="{active:isActive('/')}"><a href="#">Notes</a></li>
-          <li ng-class="{active:isActive('/aboutus')}"><a href="#/aboutus">About</a></li>
-          <li ng-class="{active:isActive('/help')}"><a href="#/help">Help</a></li>
+          <li ng-class="{active:$ctrl.isActive('/')}"><a href="#/">Notes</a></li>
+          <li ng-class="{active:$ctrl.isActive('/aboutus')}"><a href="#/aboutus">About us</a></li>
+          <li ng-class="{active:$ctrl.isActive('/help')}"><a href="#/help">Help</a></li>
         </ul>
       </div>
       <input type="text" class="form-control filter-textinput" ng-model="searchText" />

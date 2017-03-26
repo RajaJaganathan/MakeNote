@@ -1,4 +1,3 @@
-import NavigationCtrl from './navigation.controllers';
 import NoteService from './note.service';
 import {mnContenteditable} from './contenteditable.directives';
 import {mnNote} from './mnnote.component';
@@ -6,7 +5,6 @@ import {elispeText} from './note.filters';
 import NoteComponent from './note.component';
 
 export default angular.module('NoteApp', [])
-  .controller('NavigationCtrl', NavigationCtrl)
   .directive('mnContenteditable', mnContenteditable)
   .component('mnNote', mnNote)
   .component('noteComponent', NoteComponent)  

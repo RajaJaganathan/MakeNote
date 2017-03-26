@@ -1,5 +1,5 @@
-import {navbar} from './navbar.directive';
+import {navbar} from './navbar.component';
 
 export default angular.module('NavbarApp', [])  
-  .directive('navbar', navbar);
+  .component('navbar', navbar);
   
