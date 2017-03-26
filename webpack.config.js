@@ -8,6 +8,10 @@ const BabiliPlugin = require("babili-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const BUILD_PATH = {
+    SRC_PATH: [path.resolve(__dirname, 'src')]
+}
+
 const config = {
     entry: {
         vendor: './src/vendor.js',
@@ -22,9 +26,7 @@ const config = {
     module: {
         rules: [{
                 test: /\.(js)$/,
-                use: {
-                    loader: 'ng-annotate-loader',
-                }
+                loader: 'ng-annotate-loader'
             }, {
                 test: /\.(js)$/,
                 use: {
@@ -33,25 +35,19 @@ const config = {
                         presets: ['env']
                     }
                 },
-                include: [
-                    path.resolve(__dirname, "src")
-                ]
+                include: BUILD_PATH.SRC_PATH
             }, {
                 test: /\.css$/,
                 loader: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(jpg|jpeg|gif|png)$/,
-                use: [{
-                    loader: "url-loader"
-                }]
+                loader: 'url-loader'
             },
             {
                 test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-                use: [{
-                    loader: "file-loader"
-                }]
-            },
+                loader: "file-loader"
+            }
         ]
     },
     plugins: [
