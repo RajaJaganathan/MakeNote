@@ -1,6 +1,6 @@
 module.exports = {
-    "extends": "standard",
+    "extends": ["angular", "standard"],
     "plugins": [
-        "standard"
+        "standard",
     ]
 };
