@@ -26,6 +26,11 @@ const config = {
     devtool: "source-map",
     module: {
         rules: [{
+                enforce: 'pre',
+                test: /\.js?$/,
+                loader: 'eslint-loader',
+                exclude: /node_modules/
+            }, {
                 test: /\.(js)$/,
                 loader: 'ng-annotate-loader'
             }, {
@@ -36,7 +41,7 @@ const config = {
                         presets: ['env']
                     }
                 },
-                include:[buildPath.SRC]
+                include: [buildPath.SRC]
             }, {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -80,19 +85,18 @@ const config = {
             'window.jQuery': 'jquery'
         }),
         new CopyWebpackPlugin([{
-                context: 'src/app',
-                from: '**/*.html',
-                to: 'app/'
-            }, {
-                context: 'src/mock-data',
-                from: '**/*',
-                to: 'mock-data'
-            }, {
-                context: 'src/assets',
-                from: '**/*',
-                to: 'assets'
-            }
-        ])
+            context: 'src/app',
+            from: '**/*.html',
+            to: 'app/'
+        }, {
+            context: 'src/mock-data',
+            from: '**/*',
+            to: 'mock-data'
+        }, {
+            context: 'src/assets',
+            from: '**/*',
+            to: 'assets'
+        }])
     ],
     devServer: {
         contentBase: path.join(__dirname, "build"),
