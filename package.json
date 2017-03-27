@@ -7,8 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --inline"
+    "start": "webpack-dev-server --progress --colors --inline",
+    "lint-staged": "lint-staged"
   },
+  "pre-commit": "lint-staged",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RajaJaganathan/MakeNote.git"
@@ -30,6 +32,7 @@
     "eslint": "^3.18.0",
     "eslint-config-angular": "^0.5.0",
     "eslint-config-standard": "^7.1.0",
+    "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.7.0",
     "eslint-plugin-angular": "^2.2.0",
     "eslint-plugin-promise": "^3.5.0",
@@ -37,7 +40,9 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
     "html-webpack-plugin": "^2.28.0",
+    "lint-staged": "^3.4.0",
     "ng-annotate-loader": "^0.2.0",
+    "pre-commit": "^1.2.2",
     "style-loader": "^0.16.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.1",
