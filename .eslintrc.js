@@ -3,7 +3,8 @@ module.exports = {
     "plugins": [
         "standard",
     ],
-    "rules":{
+    "rules":{       
+        "semi": [2, "always"],
         "angular/no-service-method":0
     }
 };
