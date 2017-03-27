@@ -3,6 +3,8 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanwWebpackPlugin = require('clean-webpack-plugin')
+
+// Use https://github.com/webpack-contrib/babili-webpack-plugin/issues/23
 // const BabiliPlugin = require('babili-webpack-plugin')
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
