@@ -1,19 +1,19 @@
-const path = require('path')
+const path = require('path');
 
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanwWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanwWebpackPlugin = require('clean-webpack-plugin');
 
 // Use https://github.com/webpack-contrib/babili-webpack-plugin/issues/23
 // const BabiliPlugin = require('babili-webpack-plugin')
 
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const buildPath = {
   SRC: path.resolve(__dirname, 'src'),
   BUILD: path.resolve(__dirname, 'build')
-}
+};
 
 const config = {
   entry: {
@@ -74,12 +74,12 @@ const config = {
       template: './src/index.html',
       chunksSortMode: function (a, b) {
         if (a.names[0] > b.names[0]) {
-          return -1
+          return -1;
         }
         if (a.names[0] < b.names[0]) {
-          return 1
+          return 1;
         }
-        return 0
+        return 0;
       }
     }),
     new webpack.optimize.CommonsChunkPlugin({
@@ -110,6 +110,6 @@ const config = {
     compress: true,
     port: 9000
   }
-}
+};
 
-module.exports = config
+module.exports = config;
