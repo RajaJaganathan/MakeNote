@@ -1,38 +1,36 @@
-﻿import NoteApp from './note';
+export default function appConfig ($routeProvider, $locationProvider) {
+  'ngInject';
+  $routeProvider
+    .when('/', {
+      template: '<note-component></note-component>',
+      resolve: {
+        app: delayResolver
+      }
+    })
+    .when('/aboutus', {
+      templateUrl: 'app/aboutus/aboutus.html',
+      resolve: {
+        app: delayResolver
+      }
+    })
+    .when('/help', {
+      templateUrl: 'app/help/help.html',
+      resolve: {
+        app: delayResolver
+      }
+    });
+  // .otherwise({
+  //     redirectTo: '/'
+  // });
 
-export default function appConfig($routeProvider, $locationProvider) {
-    'ngInject';
-    $routeProvider
-        .when('/', {
-            template: '<note-component></note-component>',
-            resolve: {
-                app: delayResolver
-            }
-        })
-        .when('/aboutus', {
-            templateUrl: 'app/aboutus/aboutus.html',
-            resolve: {
-                app: delayResolver
-            }
-        })
-        .when('/help', {
-            templateUrl: 'app/help/help.html',
-            resolve: {
-                app: delayResolver
-            }
-        })
-    // .otherwise({
-    //     redirectTo: '/'
-    // });
-
-    //    $locationProvider.html5Mode(true);
+  //    $locationProvider.html5Mode(true);
 }
 
-function delayResolver($q, $timeout) {
-    'ngInject';
-    var defer = $q.defer();
-    $timeout(function() {
-        defer.resolve();
-    }, 2000);
-    return defer.promise;
+function delayResolver ($q, $timeout) {
+  'ngInject';
+  var defer = $q.defer();
+  $timeout(function () {
+    defer.resolve();
+  }, 2000);
+  return defer.promise;
 }

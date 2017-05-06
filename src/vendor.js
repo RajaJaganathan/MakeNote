@@ -1,8 +1,6 @@
-import jquery from "jquery";
-import bootstrap from "bootstrap"
-import angular from "angular";
-import ngRoute from 'angular-route';
-import ngAnimate from 'angular-animate';
-import bootbox from 'bootbox';
-
-
+import 'jquery';
+import 'bootstrap';
+import 'angular';
+import 'angular-route';
+import 'angular-animate';
+import 'bootbox';

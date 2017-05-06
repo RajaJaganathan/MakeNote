@@ -1,7 +1,7 @@
 import {
     navbar
-} from './navbar.component'
+} from './navbar.component';
 
 export default angular
     .module('NavbarApp', [])
-    .component('navbar', navbar)
+    .component('navbar', navbar);

@@ -1,5 +1,5 @@
-﻿import styles1 from 'bootstrap/dist/css/bootstrap.min.css';
-import styles2 from '../styles/stickynotes.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/stickynotes.css';
 
 import SharedApp from './shared/shared.module';
 import NavbarApp from './layout';
@@ -13,13 +13,13 @@ import appConfig from './app.config';
 
 export default angular
     .module('MakeNoteApp', [
-        'ngRoute',
-        'ngAnimate',
-        NavbarApp.name,
-        SharedApp.name,
-        NoteApp.name,
-        AboutusApp.name,
-        HelpApp.name
+      'ngRoute',
+      'ngAnimate',
+      NavbarApp.name,
+      SharedApp.name,
+      NoteApp.name,
+      AboutusApp.name,
+      HelpApp.name
     ])
     .config(appConfig)
     .run(appRun);

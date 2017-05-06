@@ -3,14 +3,14 @@ export function mnContenteditable () {
   return {
     require: 'ngModel',
     link: function (scope, element, attrs, ngModelCtrl) {
-            // view -> model
+      // view -> model
       element.bind('blur', function () {
         scope.$apply(function () {
           ngModelCtrl.$setViewValue(element.html());
         });
       });
 
-            // model -> view
+      // model -> view
       ngModelCtrl.$render = function () {
         element.html(ngModelCtrl.$viewValue);
       };
